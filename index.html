@@ -1,74 +1,16 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
     <title>Kamil Mielnik</title>
     <meta charset="utf-8">
+    <meta name="author" content="Kamil Mielnik">
+    <meta name="keywords" content="Kamil Mielnik, Kraków, CV, c.v., curriculum vitae, resume, JavaScript, JS">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" media="screen and (max-width: 820px)" href="css/mobile.css">
-    <link rel="stylesheet" media="screen and (min-width: 821px), print" href="css/desktop.css">
-    <link rel="stylesheet" media="print" href="css/print.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-</head>
-
-<body>
-    <div class="page">
-        <div class="name" data-bind="text: name"></div>
-
-        <h1>Contact Info</h1>
-        <div class="contact-info" data-bind="foreach: contactInfo">
-            <div class="entry">
-                <div class="label" data-bind="text: label"></div>
-
-                <!-- ko if: url -->
-                <a class="value" data-bind="attr: { href: url }, text: value"></a>
-                <!-- /ko -->
-
-                <!-- ko if: !url -->
-                <div class="value" data-bind="text: value"></div>
-                <!-- /ko -->
-            </div>
-        </div>
-
-        <!-- ko foreach: experience -->
-        <h1 data-bind="text: type"></h1>
-        <div class="experience" data-bind="foreach: entries">
-            <div class="entry">
-                <div class="general">
-                    <div class="organization" data-bind="text: organization"></div>
-                    <div class="location" data-bind="text: location"></div>
-                    <div class="time-period" data-bind="text: timePeriod"></div>
-                </div>
-                <div class="details">
-                    <div class="positions" data-bind="foreach: { data: positions, as: 'position' }">
-                        <div class="position">
-                            <div class="time-period" data-bind="text: position.timePeriod || timeSpentAtPosition(position)"></div>
-                            <div class="title" data-bind="text: title"></div>
-                        </div>
-                    </div>
-                    <div class="description" data-bind="text: description"></div>
-                </div>
-            </div>
-        </div>
-        <!-- /ko -->
-
-        <h1>Skills</h1>
-        <div data-bind="text: skills"></div>
-    </div>
-
-    <div class="menu no-user-select no-print">
-        <div class="button" data-bind="click: function() {
-            window.print();
-        }">Print</div>
-        <div class="button" data-bind="click: function() {
-            window.open(pdfUrl);
-        }">Get PDF</div>
-    </div>
-
-    <script src="js/main.js"></script>
-</body>
-
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="bundle.js"></script>
+  </body>
 </html>
